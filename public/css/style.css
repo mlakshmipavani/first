@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'slim_joe';
+  src: url("/font/Slim Joe.otf") format("opentype"); }
+body {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif; }
+  body a {
+    text-decoration: none !important; }
+  body .row {
+    margin-left: 0px;
+    margin-right: 0px; }
+
+#thank_you {
+  display: none; }
+
+#firstSlide {
+  background-color: #3F51B5; }
+  #firstSlide h1 {
+    font-size: 94px; }
+  #firstSlide h1, #firstSlide h2, #firstSlide h3 {
+    color: #ffffff;
+    font-weight: 300;
+    text-shadow: none; }
+    #firstSlide h1 .span_blue, #firstSlide h2 .span_blue, #firstSlide h3 .span_blue {
+      color: #3498db; }
+  #firstSlide .float_mid {
+    text-align: center; }
+  #firstSlide #subscribe_form {
+    display: inline-block;
+    max-width: 500px;
+    min-width: 100px;
+    width: 65%; }
+
+#secondSlide .card {
+  margin-bottom: 5em;
+  padding-right: 2em; }
+#secondSlide .card-icon {
+  margin-top: 0.25em;
+  font-size: 6em;
+  text-align: right; }
+#secondSlide .card-desc {
+  text-align: left; }
+  #secondSlide .card-desc h4 {
+    color: #727272;
+    width: 75%; }
+#secondSlide h1, #secondSlide h2 {
+  color: #212121; }
+
+#thirdSlide {
+  color: #ecf0f1;
+  background-color: #2f2f2f; }
+  #thirdSlide .huge-font {
+    font-size: 4em; }
+
+#fourthSlide .huge-font {
+  font-size: 4em; }
+#fourthSlide .logo {
+  margin-top: 2em; }
+
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none; }
