@@ -1,0 +1,15 @@
+{
+	// Example: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+	// Documentation: http://www.jshint.com/docs/options/
+	"node": true,
+	"mocha": true,
+	"esnext": true,
+	"globals": {},
+	"globalstrict": true,
+	"quotmark": "single",
+	"undef": true,
+	"unused": true,
+	"globals": {
+    	"Promise"   : true
+	}
+}
