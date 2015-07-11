@@ -15,7 +15,7 @@ block js
   script(src='/components/fullpage.js/vendors/jquery.slimscroll.min.js')
   script(src='/components/fullpage.js/jquery.fullPage.min.js')
   script(src='/js/index.js')
-  if !ENV_DEVELOPMENT
+  if !ENV_DEVELOPMENT && useAnalytics
     script(src='/js/analytics.js')
 
 block content
