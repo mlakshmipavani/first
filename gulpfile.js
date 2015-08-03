@@ -19,6 +19,9 @@ gulp.task('develop', function() {
     nodemon({
         script: 'bin/www',
         ext: 'js jade coffee',
+        env: {
+            'MONGO_URL': 'mongodb://172.30.16.238:27017/stayyolo'
+        }
     }).on('restart', function() {
         setTimeout(function() {
             livereload.changed(__dirname);
