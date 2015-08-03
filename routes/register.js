@@ -27,12 +27,11 @@ router.post('/', function(req, res) {
 
         var mob_number = oAuthRes.phone_number;
         var phoneNumber = phoneUtil.parse(mob_number, '');
-        var calling_code = phoneNumber.getCountryCode() + '';
-
+        var country_code = phoneUtil.getRegionCodeForNumber(phoneNumber);
         // remove the leading +
         mob_number = mob_number.substr(1);
 
-        falconDb.newUser(mob_number, calling_code).then(function(user_obj) {
+        falconDb.newUser(mob_number, country_code).then(function(user_obj) {
             res.json({
                 token: user_obj._id.toString(),
                 name: user_obj.name
