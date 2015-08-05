@@ -1,0 +1,24 @@
+.git/
+node_modules/
+gulp_tasks/
+
+# junk files
+test.js
+junk/
+
+# Logs
+logs
+*.log
+
+dump.rdb
+
+test.js
+.jshintrc
+gulpfile.js
+
+# environment variables
+.env*
+
+public/components/*
+
+prod/
