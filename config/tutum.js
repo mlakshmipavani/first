@@ -2,7 +2,7 @@
 
 var tutum = {};
 
-tutum.tag = 'azure';
+tutum.tag = 'siteAzure';
 
 tutum.siteImage = 'tutum.co/jaydp17/site:production';
 

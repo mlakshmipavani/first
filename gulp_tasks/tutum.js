@@ -13,7 +13,7 @@ gulp.task('tutum.deploy', function() {
 
 
 gulp.task('tutum.redeploy', function() {
-    spawn('tutum', ['service', 'redeploy', tags.site + 'AWS'], {
+    spawn('tutum', ['service', 'redeploy', tags.site], {
         stdio: 'inherit'
     });
 });
@@ -27,7 +27,7 @@ gulp.task('tutum.kill', function() {
 
 // not used anymore
 gulp.task('tutum.push', function() {
-    spawn('tutum', ['image', 'push', tags.site], {
+    spawn('tutum', ['image', 'push', tags.siteProd], {
         stdio: 'inherit'
     });
 });
@@ -44,7 +44,7 @@ function deploy() {
         '-e', 'PORT=' + config.PORT,
         '-e', 'MONGO_URL=' + config.MONGO_URL,
         '-e', 'BUNYAN_LEVEL=' + config.BUNYAN_LEVEL,
-        '-p', config.PORT + ':' + config.PORT,
+        '-p', '80:' + config.PORT,
         '--tag', tutumConfig.tag,
         '--name', tags.site, tutumConfig.siteImage
     ], {
