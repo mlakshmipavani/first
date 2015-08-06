@@ -142,11 +142,12 @@ var docker = {
         var npm_config = 'NPM_CONFIG_PRODUCTION=false';
 
         // ports
-        var port = config.PORT + ':' + config.PORT;
+        var port = '80:80';
+        var securePort = '443:443';
 
         // docker arguments
         var docker_args = [
-            'run', '-it', '--rm', '-p', port
+            'run', '-it', '--rm', '-p', port, '-p', securePort
         ];
         if (!isProd) {
             docker_args.push('--link', tags.mongo + ':' + tags.mongo);

@@ -6,13 +6,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var https = require('https');
+var http = require('http');
+var fs = require('fs');
+var enforce = require('express-sslify');
 
 var routes = require('./routes/index');
 
 var app = express();
 
-// view engine setup
+// enforce HTTPS
+app.use(enforce.HTTPS(false, true));
 
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -65,5 +71,17 @@ app.use(function(err, req, res, next) {
     });
 });
 
+var options = {
+    key: fs.readFileSync('./ssl/private-key.pem'),
+    cert: fs.readFileSync('./ssl/cert.pem')
+};
+
+https.createServer(options, app).listen(443, function() {
+    console.log('Express server listening on port ' + 443);
+});
+
+http.createServer(app).listen(80, function() {
+    console.log('Express un encrypted server running');
+});
 
 module.exports = app;

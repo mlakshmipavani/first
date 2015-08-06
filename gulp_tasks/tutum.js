@@ -41,10 +41,10 @@ function getTutumImage(name) {
 function deploy() {
     var config = helpers.prodConfig();
     spawn('tutum', ['service', 'run',
-        '-e', 'PORT=' + config.PORT,
         '-e', 'MONGO_URL=' + config.MONGO_URL,
         '-e', 'BUNYAN_LEVEL=' + config.BUNYAN_LEVEL,
-        '-p', '80:' + config.PORT,
+        '-p', '80:80',
+        '-p', '443:443',
         '--tag', tutumConfig.tag,
         '--name', tags.site, tutumConfig.siteImage
     ], {
