@@ -73,7 +73,8 @@ app.use(function(err, req, res, next) {
 
 var options = {
     key: fs.readFileSync('./ssl/private-key.pem'),
-    cert: fs.readFileSync('./ssl/cert.pem')
+    cert: fs.readFileSync('./ssl/cert.pem'),
+    ca: [fs.readFileSync('./ssl/sub.class1.server.ca.pem')]
 };
 
 https.createServer(options, app).listen(443, function() {
