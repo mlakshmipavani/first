@@ -4,7 +4,7 @@ RUN mkdir /src
 
 WORKDIR /src
 
-COPY package.json /src/
+COPY package.json bower.json .bowerrc /src/
 
 RUN npm install --unsafe-perm
 
