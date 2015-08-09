@@ -42,4 +42,25 @@ router.post('/', function(req, res) {
     });
 });
 
+
+/**
+ * Lets the support members login using username password
+ */
+router.post('/support', function(req, res) {
+    var userName = req.body.userName;
+    var password = req.body.password;
+
+    falconDb.supportLogin(userName, password).then(function(userObj) {
+        var response = {
+            valid: false,
+            token: undefined
+        };
+        if (userObj) {
+            response.valid = true;
+            response.token = userObj._id.toString();
+        }
+        res.json(response);
+    });
+});
+
 module.exports = router;
