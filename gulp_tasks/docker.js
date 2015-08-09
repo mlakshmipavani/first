@@ -139,7 +139,6 @@ var docker = {
         // env variables
         var mongo_url = 'MONGO_URL=' + config.MONGO_URL;
         var bunyan_level = 'BUNYAN_LEVEL=' + config.BUNYAN_LEVEL;
-        var npm_config = 'NPM_CONFIG_PRODUCTION=false';
 
         // ports
         var port = '80:80';
@@ -156,7 +155,7 @@ var docker = {
             }
         }
 
-        docker_args.push('-e', mongo_url, '-e', bunyan_level, '-e', npm_config);
+        docker_args.push('-e', mongo_url, '-e', bunyan_level);
 
         // if it's development envirnment put the source in a read-only volume
         if (isProd) {

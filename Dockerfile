@@ -6,7 +6,7 @@ WORKDIR /src
 
 COPY package.json bower.json .bowerrc /src/
 
-RUN npm install --unsafe-perm
+RUN npm install --production --unsafe-perm
 
 COPY . /src
 
