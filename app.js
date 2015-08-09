@@ -79,12 +79,14 @@ var options = {
     ca: [fs.readFileSync('./ssl/sub.class1.server.ca.pem')]
 };
 
-https.createServer(options, app).listen(443, function() {
-    console.log('Express server listening on port ' + 443);
+var securePort = process.env.SECURE_PORT || 443;
+https.createServer(options, app).listen(securePort, function() {
+    console.log('Express server listening on port ' + securePort);
 });
 
-http.createServer(app).listen(80, function() {
-    console.log('Express un encrypted server running');
+var port = process.env.PORT || 80;
+http.createServer(app).listen(port, function() {
+    console.log('Express un encrypted server running on ' + port);
 });
 
 module.exports = app;

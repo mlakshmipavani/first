@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     plumber = require('gulp-plumber'),
@@ -17,8 +19,13 @@ gulp.task('watch', function() {
 gulp.task('develop', function() {
     livereload.listen();
     nodemon({
-        script: 'bin/www',
+        script: 'app.js',
         ext: 'js jade coffee',
+        env: {
+            'MONGO_URL': 'mongodb://172.30.16.238:27017/stayyolo',
+            'PORT': '3000',
+            'SECURE_PORT': '8000'
+        }
     }).on('restart', function() {
         setTimeout(function() {
             livereload.changed(__dirname);
