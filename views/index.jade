@@ -23,7 +23,7 @@ block content
 
     #firstSlide.section
       .row
-        img(src='/img/logo3.png' height='200px')
+        img.img-responsive.center-block(src='/img/logo3.png')
         //- h1(style={'font-family': 'slim_joe'}) YOLO
         //- h1(style={'font-weight': 900}) Y O L O
         h2(style={'padding-bottom': '2em'}) Messenger
@@ -34,27 +34,29 @@ block content
         h1 DRAFT
 
         .row(style={'margin-bottom': '2em'})
-          .col-xs-3.card-icon
-            img(src='/img/rocket.png' height='360px')
-          .col-xs-9.card-desc
-            h2 Interactive Stickers
-            h4(style={'margin-bottom':'1.5em'}) You can send stickers that the receiver can interact with. And based on his input the sticker may act differently. 
-            .col-xs-3
-              img(src='/img/man.png' height='240px')
-            .col-xs-3
-              img(src='/img/girl.png' height='240px')
-            .col-xs-3
-              img(src='/img/boy.png' height='240px')
+          .col-sm-3.card-icon
+            img.img-responsive.center-block(src='/img/rocket.png')
+          .col-sm-9.card-desc
+            .row
+              h2 Interactive Stickers
+              h4(style={'margin-bottom':'1.5em'}) You can send stickers that the receiver can interact with. And based on his input the sticker may act differently. 
+            .row
+              .col-sm-3
+                img.img-responsive.center-block(src='/img/man.png' )
+              .col-sm-3
+                img.img-responsive.center-block(src='/img/girl.png' )
+              .col-sm-3
+                img.img-responsive.center-block(src='/img/boy.png')
 
         .row(style={'margin-bottom':'1.5em'})
             .col-sm-5.card.col-sm-offset-1
-              .col-xs-3.card-icon.fa.fa-history(style={'color': '#FF9100'})
-              .col-xs-9.card-desc
+              .col-sm-3.card-icon.fa.fa-history(style={'color': '#FF9100'})
+              .col-sm-9.card-desc
                 h2 Schedule Messages
                 h4 We know there are times when you want a message to be sent at a certain point of time.
             .col-sm-5.card
-              .col-xs-3.card-icon.fa.fa-child(style={'color': '#1BBC9B'})
-              .col-xs-9.card-desc
+              .col-sm-3.card-icon.fa.fa-child(style={'color': '#1BBC9B'})
+              .col-sm-9.card-desc
                 h2 Friend online notification
                 h4 For those who wait for the special ones to get online
 

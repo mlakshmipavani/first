@@ -23,6 +23,9 @@ body {
     text-shadow: none; }
     #firstSlide h1 .span_blue, #firstSlide h2 .span_blue, #firstSlide h3 .span_blue {
       color: #3498db; }
+  #firstSlide img {
+    width: 400px;
+    padding: 2em; }
   #firstSlide .float_mid {
     text-align: center; }
   #firstSlide #subscribe_form {
@@ -45,6 +48,14 @@ body {
     width: 75%; }
 #secondSlide h1, #secondSlide h2 {
   color: #212121; }
+#secondSlide img {
+  width: 100px;
+  padding-top: 50px; }
+@media (max-width: 760px) {
+  #secondSlide .card-desc {
+    text-align: center; }
+    #secondSlide .card-desc h4 {
+      width: 100%; } }
 
 #thirdSlide {
   color: #ecf0f1;

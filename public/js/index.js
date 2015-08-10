@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
         autoScrolling: false,
+        fitToSection: false,
         resize: false,
         css3: true
     });

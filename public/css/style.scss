@@ -1,93 +1,118 @@
 @font-face {
-  font-family: 'slim_joe';
-  src: url('/font/Slim Joe.otf')  format("opentype");
+    font-family: 'slim_joe';
+    src: url("/font/Slim Joe.otf") format("opentype");
 }
 
 body {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  a {
-    text-decoration: none !important;
-  }
-  .row {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+
+    a {
+        text-decoration: none !important;
+    }
+
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
 
 #thank_you {
-  display: none;
+    display: none;
 }
-
 
 #firstSlide {
-  h1{
-    font-size: 94px;
-  }
-  h1, h2, h3 {
-    color: #ffffff;
-    font-weight: 300;
-    text-shadow: none;
-    .span_blue {
-      color: #3498db;
+    h1 {
+        font-size: 94px;
     }
-  }
-  .float_mid {
-    text-align: center;
-  }
-  #subscribe_form {
-    display: inline-block;
-    max-width: 500px;
-    min-width: 100px;
-    width: 65%;
-  }
-  background-color: #2196F3;
-}
 
+    h1, h2, h3 {
+        color: #ffffff;
+        font-weight: 300;
+        text-shadow: none;
+
+        .span_blue {
+            color: #3498db;
+        }
+    }
+
+    img {
+        width: 400px;
+        padding: 2em;
+    }
+
+    .float_mid {
+        text-align: center;
+    }
+
+    #subscribe_form {
+        display: inline-block;
+        max-width: 500px;
+        min-width: 100px;
+        width: 65%;
+    }
+
+    background-color: #2196F3;
+}
 
 #secondSlide {
-  .card {
-    margin-bottom: 5em;
-    padding-right: 2em;
-  }
-  .card-icon {
-    margin-top: 0.25em;
-    font-size: 6em;
-    text-align: right;
-  }
-  .card-desc {
-    h4 {
-      color: #727272;
-      width: 75%;
+    .card {
+        margin-bottom: 5em;
+        padding-right: 2em;
     }
-    text-align: left;
-  }
-  h1, h2 {
-    color: #212121;
-  }
+
+    .card-icon {
+        margin-top: 0.25em;
+        font-size: 6em;
+        text-align: right;
+    }
+
+    .card-desc {
+        h4 {
+            color: #727272;
+            width: 75%;
+        }
+
+        text-align: left;
+    }
+
+    h1, h2 {
+        color: #212121;
+    }
+
+    img {
+        width: 100px;
+        padding-top: 50px;
+    }
+
+    @media (max-width: 760px) {
+        .card-desc {
+            h4 {
+                width: 100%;
+            }
+
+            text-align: center;
+        }
+    }
 }
 
-
 #thirdSlide {
+    .huge-font {
+        font-size: 4em;
+    }
 
-  .huge-font {
-    font-size: 4em;
-  }
-
-  color: #ecf0f1;
-  background-color: #2f2f2f;
+    color: #ecf0f1;
+    background-color: #2f2f2f;
 }
 
 #fourthSlide {
+    .huge-font {
+        font-size: 4em;
+    }
 
-  .huge-font {
-    font-size: 4em;
-  }
-
-  .logo {
-    margin-top: 2em;
-  }
-
+    .logo {
+        margin-top: 2em;
+    }
 }
 
 .vcenter {
