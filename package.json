@@ -8,8 +8,8 @@
     "start_prod": "NODE_ENV=production node app.js"
   },
   "engines": {
-    "node": "0.12.x",
-    "npm": "2.13.x"
+    "node": "5.3.x",
+    "npm": "3.3.x"
   },
   "config": {
     "unsafe-perm": true
