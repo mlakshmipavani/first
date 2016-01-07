@@ -489,6 +489,7 @@ body {
   .landing-about .landing-about__box .landing-about__box-img {
     float: left;
     display: block;
+    margin-bottom: 2em;
     margin-right: 2.35765%;
     width: 48.82117%;
     display: flex;
@@ -501,7 +502,7 @@ body {
   }
 
   .landing-about .landing-about__box .landing-about__box-img img {
-    width: 100%;
+    width: 9em;
     max-width: 325px
   }
 }
@@ -521,7 +522,8 @@ body {
   }
 
   .landing-about .landing-about__box .landing-about__box-img img {
-    width: 200px;
+    height: 120px;
+    /*width: 200px;*/
     margin: 0 auto;
     display: block
   }
