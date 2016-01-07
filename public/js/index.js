@@ -34,7 +34,7 @@ emailInput.on('input', function (e) {
 
 subscribeBtn.click(function () {
   enableSubscribeBtn(false);
-  $.post('https://httpbin.org/post', {email: emailInput.val()}, function (result) {
+  $.post('/subscribe', {email: emailInput.val()}, function (result) {
     dialogInit.slideUp();
     successMsg.slideDown();
   })
