@@ -17,7 +17,7 @@ var routes = require('./routes/index');
 var app = express();
 
 // enforce HTTPS
-app.use(enforce.HTTPS(false, true));
+app.use(enforce.HTTPS({trustAmazonHeader: true}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

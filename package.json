@@ -15,18 +15,18 @@
     "unsafe-perm": true
   },
   "dependencies": {
-    "bluebird": "^2.9.34",
+    "bluebird": "^3.1.1",
     "body-parser": "^1.14.2",
     "bower": "^1.4.1",
     "cookie-parser": "^1.4.0",
     "debug": "^2.2.0",
     "express": "^4.13.3",
-    "express-sslify": "^0.1.2",
+    "express-sslify": "^1.0.1",
     "google-libphonenumber": "^1.0.3",
     "jade": "^1.11.0",
     "mongodb": "^2.0.39",
     "morgan": "^1.6.1",
-    "request-promise": "^0.4.3",
+    "request-promise": "^1.0.2",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "gulp-livereload": "~3.8.0",
     "gulp-nodemon": "~2.0.2",
     "gulp-plumber": "~1.0.0",
-    "gulp-ruby-sass": "~1.0.1",
+    "gulp-ruby-sass": "^2.0.6",
     "gulp-util": "^3.0.6",
     "require-dir": "^0.3.0",
     "yargs": "^3.18.0"
