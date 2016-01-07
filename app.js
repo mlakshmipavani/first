@@ -12,7 +12,7 @@ var fs = require('fs');
 var enforce = require('express-sslify');
 
 var routes = require('./routes/index');
-var registerRoutes = require('./routes/register');
+//var registerRoutes = require('./routes/register');
 
 var app = express();
 
@@ -37,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/register', registerRoutes);
+//app.use('/register', registerRoutes);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

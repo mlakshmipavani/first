@@ -1,84 +1,84 @@
-extends layout
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='keywords', content='bots, yolo, tech, api, integrations')
+    meta(name='description', content='With YoloBots you can chat with various bots (instead of humans!) and get stuff done fast. No more need for hundreds of apps for every little task')
+    title 'YoloBots'
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/index-fonts.css')
+    link(rel='stylesheet', href='/css/index.css')
 
-block css
-  link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-  link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-  link(rel='stylesheet', href='/components/fullpage.js/jquery.fullPage.css')
-  link(rel='stylesheet', href='/css/style.css')
-  link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=latin,latin-ext')
+    if !ENV_DEVELOPMENT && useAnalytics
+      script(src='/js/analytics.js')
 
-block js
-  if ENV_DEVELOPMENT
-    script(src='http://localhost:35729/livereload.js')
-  script(src='/components/jquery/dist/jquery.min.js')
-  script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
-  script(src='/components/fullpage.js/vendors/jquery.slimscroll.min.js')
-  script(src='/components/fullpage.js/jquery.fullPage.min.js')
+
+  body
+    .landing
+      .landing-header
+        .landing-header-wrapper
+          span(style={color: '#046EE4'}) StayYolo
+
+      .landing-intro(style="height: auto; min-height: 760px; padding-top: initial;")
+        .landing-intro-wrapper
+          h1.landing-intro__text-main YoloBots
+          h2.landing-intro__text-side With YoloBots you can chat with various bots (instead of humans!) and get stuff done fast. No more need for hundreds of apps for every little task.
+          .landing-intro__buttons
+            .landing-intro__buttons-left
+              button.landing__btn-blue(onclick='signUpForBeta();') Sign Up for Beta
+
+        .landing-intro__integrations
+          .landing-intro__integrations-title Some of the services that YoloBots will integrate with:
+            ul.landing-intro__integrations-list
+              li
+                img(src='/img/paytm.png' alt='')
+              li
+                img(src='/img/ola.png' alt='')
+              li
+                img(src='/img/uber.png' alt='')
+              li
+                img(src='/img/bookmyshow.png' alt='' style="padding-top: 0.5em;")
+
+      .landing-about
+        .landing-about-wrapper
+          .landing-about__box
+            .landing-about__box-text
+              .landing-about__box-text-title Bots to the rescue
+              .landing-about__box-text-desc Let the bot do all the heavy lifting for you. All the mundane tasks that you used to do can now by automated.
+            .landing-about__box-img
+              img(src='/img/bot-head.png' alt='Bots to the rescue')
+          .landing-about__box
+            .landing-about__box-img
+              img(src='/img/network.png' alt='Smart Integrations')
+            .landing-about__box-text
+              .landing-about__box-text-title Smart Integrations
+              .landing-about__box-text-desc We've created our bots to make your life easier. When you perform an action the bots know what you'll need next.
+          .landing-about__box
+            .landing-about__box-text
+              .landing-about__box-text-title Storage Efficient
+              .landing-about__box-text-desc No need to install apps for every single task you wanna perform.
+            .landing-about__box-img
+              img(src='/img/storage.png' alt='Storage Efficient')
+
+      .landing-summary
+        .landing-summary-wrapper
+          h1.landing-summary__text-main Start working smarter and much more efficient.
+          h2.landing-summary__text-side Sign up for YoloBots beta now and get free credits upon launch.
+          button.landing-summary__btn Sign Up for Beta
+
+      .landing-foot Copyright © 2016 StayYolo
+
+    #ngdialog1.ngdialog.ngdialog-theme-torchy.dialog__sign-up-for-beta.ng-scope(role='alertdialog')
+      .ngdialog-overlay
+      .ngdialog-content(role='document')
+        .dialog__sign-up-for-beta--init
+          .dialog__sign-up-for-beta__title YoloBots early access registration
+          .dialog__sign-up-for-beta__desc Register for YoloBots beta now and get free credits upon launch
+          .dialog__sign-up-for-beta__input
+            svg(viewBox="0 0 24 24" xml:space="preserve" style="fill: #c1c9cf" name="email-envelope" width="24px" height="24px" fill="#c1c9cf" class="ng-binding ng-isolate-scope")
+              path(d="M20,7H4C2.897,7,2,7.897,2,9v9c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2V9 C22,7.897,21.103,7,20,7z M18.113,9L12,12.82L5.887,9H18.113z M4,18v-7.821l7.47,4.669C11.632,14.949,11.816,15,12,15 s0.368-0.051,0.53-0.152L20,10.178L20.001,18H4z")
+            input(type='text' placeholder="Your email address")
+          .dialog__sign-up-for-beta__input-button(disabled="disabled") Sign up for early access
+
   script(src='/js/index.js')
-  if !ENV_DEVELOPMENT && useAnalytics
-    script(src='/js/analytics.js')
-
-block content
-  #fullpage
-
-    #firstSlide.section
-      .row
-        img.img-responsive.center-block(src='/img/logo3.png')
-        //- h1(style={'font-family': 'slim_joe'}) YOLO
-        //- h1(style={'font-weight': 900}) Y O L O
-        h2(style={'padding-bottom': '2em'}) Messenger
-
-
-    #secondSlide.section
-      .row
-        h1 DRAFT
-
-        .row(style={'margin-bottom': '2em'})
-          .col-sm-3.card-icon
-            img.img-responsive.center-block(src='/img/rocket.png')
-          .col-sm-9.card-desc
-            .row
-              h2 Interactive Stickers
-              h4(style={'margin-bottom':'1.5em'}) You can send stickers that the receiver can interact with. And based on his input the sticker may act differently. 
-            .row
-              .col-sm-3
-                img.img-responsive.center-block(src='/img/man.png' )
-              .col-sm-3
-                img.img-responsive.center-block(src='/img/girl.png' )
-              .col-sm-3
-                img.img-responsive.center-block(src='/img/boy.png')
-
-        .row(style={'margin-bottom':'1.5em'})
-            .col-sm-5.card.col-sm-offset-1
-              .col-sm-3.card-icon.fa.fa-history(style={'color': '#FF9100'})
-              .col-sm-9.card-desc
-                h2 Schedule Messages
-                h4 We know there are times when you want a message to be sent at a certain point of time.
-            .col-sm-5.card
-              .col-sm-3.card-icon.fa.fa-child(style={'color': '#1BBC9B'})
-              .col-sm-9.card-desc
-                h2 Friend online notification
-                h4 For those who wait for the special ones to get online
-
-
-    #thirdSlide.section
-      .row
-        .huge-font Leave us a&nbsp;
-          a(href='mailto:hello@stayyolo.com?subject=Hey!') message
-
-
-    #fourthSlide.section
-      .row
-        .huge-font Credits
-      .row.center-block
-        .col-sm-3.card.vcenter.logo
-          a(href='https://msg91.com')
-            img(src='https://msg91.com/images/startups/msg91Badge.png' width='120' height='90' alt='MSG91 for Startups')
-        .col-sm-3.card.vcenter.logo
-          .row
-            a(href='http://www.freepik.com')
-              img(src='/img/freepik-robots.png' height='100')
-          .row Vectors designed by Freepik
-        .col-sm-3.card.vcenter.logo
-          a(href='https://mixpanel.com/f/partner')
-            img(src='//cdn.mxpnl.com/site_media/images/partner/badge_blue.png' alt='Mobile Analytics')

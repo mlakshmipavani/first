@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
     res.render('index', {
-        title: 'Yolo Messenger',
+        title: 'YoloBots',
         useAnalytics: true
     });
 });
