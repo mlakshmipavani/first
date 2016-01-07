@@ -798,7 +798,7 @@ body {
 }
 
 .ngdialog {
-  visibility: hidden;
+  display: none;
   position: fixed;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -982,6 +982,7 @@ body.ngdialog-open {
 @media screen and (max-width: 31.25em) {
   .dialog__sign-up-for-beta .dialog__sign-up-for-beta--success {
     height: 228px;
+    display: none;
     padding: 70px 0
   }
 }
@@ -989,6 +990,7 @@ body.ngdialog-open {
 @media screen and (min-width: 31.3125em) and (max-width: 59.9375em) {
   .dialog__sign-up-for-beta .dialog__sign-up-for-beta--success {
     height: 237px;
+    display: none;
     padding: 74px 0
   }
 }
@@ -996,6 +998,7 @@ body.ngdialog-open {
 @media screen and (min-width: 60em) {
   .dialog__sign-up-for-beta .dialog__sign-up-for-beta--success {
     height: 261px;
+    display: none;
     padding: 85px 0
   }
 }

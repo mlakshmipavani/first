@@ -13,7 +13,6 @@ html(lang='en')
     if !ENV_DEVELOPMENT && useAnalytics
       script(src='/js/analytics.js')
 
-
   body
     .landing
       .landing-header
@@ -26,7 +25,7 @@ html(lang='en')
           h2.landing-intro__text-side With YoloBots you can chat with various bots (instead of humans!) and get stuff done fast. No more need for hundreds of apps for every little task.
           .landing-intro__buttons
             .landing-intro__buttons-left
-              button.landing__btn-blue(onclick='signUpForBeta();') Sign Up for Beta
+              button.landing__btn-blue(onclick='showSignUp();') Sign Up for Beta
 
         .landing-intro__integrations
           .landing-intro__integrations-title Some of the services that YoloBots will integrate with:
@@ -65,7 +64,7 @@ html(lang='en')
         .landing-summary-wrapper
           h1.landing-summary__text-main Start working smarter and much more efficient.
           h2.landing-summary__text-side Sign up for YoloBots beta now and get free credits upon launch.
-          button.landing-summary__btn Sign Up for Beta
+          button.landing-summary__btn(onclick='showSignUp();') Sign Up for Beta
 
       .landing-foot Copyright © 2016 StayYolo
 
@@ -76,9 +75,16 @@ html(lang='en')
           .dialog__sign-up-for-beta__title YoloBots early access registration
           .dialog__sign-up-for-beta__desc Register for YoloBots beta now and get free credits upon launch
           .dialog__sign-up-for-beta__input
-            svg(viewBox="0 0 24 24" xml:space="preserve" style="fill: #c1c9cf" name="email-envelope" width="24px" height="24px" fill="#c1c9cf" class="ng-binding ng-isolate-scope")
+            svg#emailSvg(viewBox="0 0 24 24" xml:space="preserve" style="fill: #c1c9cf" name="email-envelope" width="24px" height="24px" fill="#c1c9cf" class="ng-binding ng-isolate-scope")
               path(d="M20,7H4C2.897,7,2,7.897,2,9v9c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2V9 C22,7.897,21.103,7,20,7z M18.113,9L12,12.82L5.887,9H18.113z M4,18v-7.821l7.47,4.669C11.632,14.949,11.816,15,12,15 s0.368-0.051,0.53-0.152L20,10.178L20.001,18H4z")
-            input(type='text' placeholder="Your email address")
-          .dialog__sign-up-for-beta__input-button(disabled="disabled") Sign up for early access
+            input#emailInput(type='text' placeholder="Your email address")
+          button.dialog__sign-up-for-beta__input-button(disabled="disabled") Sign up for early access
+        .dialog__sign-up-for-beta--success
+          svg(x='0px' y='0px' viewBox="0 0 24 24" xml:space="preserve" style="fill: #4cc328" name="check-circle-2" width="40px" height="40px" fill="#4cc328" class="dialog__sign-up-for-beta__input-success-icon ng-binding ng-isolate-scope")
+            g: g: path(d='M12.042,22c-5.514,0-10-4.486-10-10s4.486-10,10-10s10,4.486,10,10S17.556,22,12.042,22z M12.042,4c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S16.453,4,12.042,4z')
+            polygon(points='11.201,16.928 7.158,12.885 8.925,11.117 10.882,13.073 15.024,7.274 17.059,8.727')
+          .dialog__sign-up-for-beta__desc Your email has been registered! We'll keep you up to date on the latest and greatest!
+        .ngdialog-close
 
+  script(src='/components/jquery/dist/jquery.min.js')
   script(src='/js/index.js')
