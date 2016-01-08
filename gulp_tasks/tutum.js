@@ -41,7 +41,7 @@ function getTutumImage(name) {
 function deploy() {
     var config = helpers.prodConfig();
     spawn('tutum', ['service', 'run',
-        '-e', 'MONGO_URL=' + config.MONGO_URL,
+        '-e', 'MONGO_URL=' + config.MONGO_SANDBOX,
         '-e', 'BUNYAN_LEVEL=' + config.BUNYAN_LEVEL,
         '-p', '80:80',
         '-p', '443:443',

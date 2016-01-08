@@ -137,7 +137,7 @@ var docker = {
         }
 
         // env variables
-        var mongo_url = 'MONGO_URL=' + config.MONGO_URL;
+        var mongo_url = 'MONGO_URL=' + config.MONGO_SANDBOX;
         var bunyan_level = 'BUNYAN_LEVEL=' + config.BUNYAN_LEVEL;
 
         // ports
