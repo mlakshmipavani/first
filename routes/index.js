@@ -17,6 +17,9 @@ router.get('/noanalytics', function(req, res) {
     });
 });
 
+router.get('/uber', function(req, res) {
+  res.render('uber');
+});
 
 // Uncomment this to include terms and condition
 // router.get('/terms',function(req,res){

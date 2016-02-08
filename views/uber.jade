@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='keywords', content='bots, yolo, tech, api, integrations')
+    meta(name='description', content='With YoloBots you can chat with various bots (instead of humans!) and get stuff done fast. No more need for hundreds of apps for every little task')
+    title Uber Request
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/index-fonts.css')
+    link(rel='stylesheet', href='/css/uber.css')
+
+  body
+    .landing
+
+      .landing-header
+        .landing-header-wrapper
+          span(style={color: '#046EE4'}) StayYolo
+
+      .landing-about
+        .landing-about-wrapper
+          .landing-about__box
+            .landing-about__box-text
+              .landing-about__box-text-title(style={'font-size': '5em', 'text-align': 'center'}) U&nbsp;B&nbsp;E&nbsp;R<br/>
+              .landing-about__box-text-title(style={'font-size': '3em', 'text-align': 'center'}) in&nbsp;YoloBots
+              .landing-about__box-text-desc Users are be able to view the available rides along with their surge rates and estimated time of arrival. They'll also be able to book the ride, through the bot.
+            .landing-about__box-img
+              img(src='/img/uber_inside.png' alt='Bots to the rescue' style={'max-width': '325px'})
+
+          .landing-about__box
+            .landing-about__box-img
+              img(src='/img/yolobots_outside.png' alt='Bots to the rescue' style={'max-width': '325px'})
+            .landing-about__box-text
+              .landing-about__box-text-title(style={'font-size': '4em'}) UBER bot
+              .landing-about__box-text-desc This is how the UBER bot will be displayed to the user, along with other bots, on the main screen
+
+      .landing-summary
+        .landing-summary-wrapper
+          h1.landing-summary__text-main What's in it for UBER?
+          h2.landing-summary__text-side
+            ul
+              li Whenever the user books a movie ticket or flight ticket, a few hours before the departure YoloBots will suggest the user to book a cab
+              li If selected from the notification, the user doesn't have to select the destination, as YoloBots already knows that he's going for a movie/airport
+              li Once the bot for promo codes is ready, the user won't have to go searching for coupons, if available appropriate coupon code will be auto-applied when booking the ride
