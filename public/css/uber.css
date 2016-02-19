@@ -1190,3 +1190,25 @@ body.ngdialog-open {
   background-image: -webkit-linear-gradient(#1186db, #0068e6);
   background-image: linear-gradient(#1186db, #0068e6)
 }
+
+
+
+@media screen and (max-width: 31.25em) {
+  .videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+  }
+  .videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
