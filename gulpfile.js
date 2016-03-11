@@ -1,7 +1,45 @@
 'use strict';
 
+var gulp = require('gulp'),
+  nodemon = require('gulp-nodemon'),
+  plumber = require('gulp-plumber'),
+  livereload = require('gulp-livereload'),
+  sass = require('gulp-ruby-sass');
 
-/** Import all gulp tasks */
-var requireDir = require('require-dir');
+gulp.task('sass', function() {
+  return sass('./public/css/')
+    .pipe(gulp.dest('./public/css'))
+    .pipe(livereload());
+});
 
-var dir = requireDir('./gulp_tasks');
+gulp.task('watch', function() {
+  gulp.watch('./public/css/*.scss', ['sass']);
+});
+
+gulp.task('develop', function() {
+  livereload.listen();
+  nodemon({
+    script: 'app.js',
+    ext: 'js jade coffee',
+    env: {
+      'MONGO_URL': 'mongodb://172.30.16.238:27017/stayyolo',
+      'PORT': '3000',
+      'SECURE_PORT': '8000'
+    }
+  }).on('restart', function() {
+    setTimeout(function() {
+      livereload.changed(__dirname);
+    }, 500);
+  });
+});
+
+gulp.task('build', function() {
+  return sass('./public/css/')
+    .pipe(gulp.dest('./public/css'));
+});
+
+gulp.task('default', [
+  'sass',
+  'develop',
+  'watch'
+]);

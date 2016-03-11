@@ -13,7 +13,6 @@ var enforce = require('express-sslify');
 
 var routes = require('./routes/index');
 var subscribeRoutes = require('./routes/subscribe-beta');
-//var registerRoutes = require('./routes/register');
 
 var app = express();
 
