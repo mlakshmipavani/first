@@ -10,6 +10,6 @@ RUN npm install --production --unsafe-perm
 
 COPY . /src
 
-EXPOSE 80 443
+EXPOSE 3000 5000
 
 CMD ["npm", "run", "start_prod"]

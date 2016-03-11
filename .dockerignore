@@ -5,6 +5,7 @@ gulp_tasks/
 # junk files
 test.js
 junk/
+.sass-cache
 
 # Logs
 logs
@@ -12,7 +13,6 @@ logs
 
 dump.rdb
 
-test.js
 .jshintrc
 gulpfile.js
 
@@ -22,3 +22,4 @@ gulpfile.js
 public/components/*
 
 prod/
+production.yml
