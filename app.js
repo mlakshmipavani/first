@@ -74,9 +74,9 @@ app.use(function(err, req, res, next) {
 });
 
 var options = {
-    key: fs.readFileSync('./ssl/private-key.pem'),
-    cert: fs.readFileSync('./ssl/cert.pem'),
-    ca: [fs.readFileSync('./ssl/sub.class1.server.ca.pem')]
+    key: fs.readFileSync('./ssl/private.key'),
+    cert: fs.readFileSync('./ssl/2_www.yolobots.com.crt'),
+    ca: [fs.readFileSync('./ssl/ca.crt')]
 };
 
 var securePort = process.env.SECURE_PORT || 443;
