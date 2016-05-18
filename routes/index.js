@@ -1,23 +1,30 @@
 var express = require('express');
+var MobileDetect = require('mobile-detect');
 var router = express.Router();
 
 /* GET home page. */
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
+  const md = new MobileDetect(req.headers['user-agent']);
+  if (md.mobile()) {
+    if (md.os() === 'AndroidOS') res.redirect('market://details?id=com.stayyolo.app');
+    else res.redirect('https://www.facebook.com/yolobotsHQ/');
+  } else {
     res.render('index', {
-        title: 'YoloBots',
-        useAnalytics: true
+      title: 'YoloBots',
+      useAnalytics: true
     });
+  }
 });
 
-router.get('/noanalytics', function(req, res) {
-    res.render('index', {
-        title: 'Yolo Messenger',
-        useAnalytics: false
-    });
+router.get('/noanalytics', function (req, res) {
+  res.render('index', {
+    title: 'Yolo Messenger',
+    useAnalytics: false
+  });
 });
 
-router.get('/uber', function(req, res) {
+router.get('/uber', function (req, res) {
   res.render('uber');
 });
 
