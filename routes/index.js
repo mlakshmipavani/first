@@ -7,7 +7,11 @@ var router = express.Router();
 router.get('/', function (req, res) {
   const md = new MobileDetect(req.headers['user-agent']);
   if (md.mobile()) {
-    if (md.os() === 'AndroidOS') res.redirect('market://details?id=com.stayyolo.app');
+    if (md.os() === 'AndroidOS') {
+      let referrer = req.param('referrer') || '';
+      referrer = encodeURIComponent(referrer);
+      res.redirect(`market://details?id=com.stayyolo.app&${referrer}`);
+    }
     else res.redirect('https://www.facebook.com/yolobotsHQ/');
   } else {
     res.render('index', {
