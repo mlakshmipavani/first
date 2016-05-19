@@ -21,6 +21,13 @@ router.get('/', function (req, res) {
   }
 });
 
+router.get('/email-confirmed', (req, res) => {
+  res.render('email-confirmed', {
+    email: req.query.email,
+    name: req.query.name || 'there'
+  });
+});
+
 router.get('/noanalytics', function (req, res) {
   res.render('index', {
     title: 'Yolo Messenger',
