@@ -4,7 +4,7 @@ RUN mkdir /src
 
 WORKDIR /src
 
-COPY package.json bower.json .bowerrc /src/
+COPY package.json /src/
 
 RUN npm install --production --unsafe-perm
 
