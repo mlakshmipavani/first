@@ -1,0 +1,5 @@
+site:
+  volumes:
+    - '.:/src:ro'
+  environment:
+    NODE_ENV: development
