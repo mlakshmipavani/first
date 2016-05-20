@@ -1,6 +1,7 @@
-var express = require('express');
-var MobileDetect = require('mobile-detect');
-var router = express.Router();
+const express = require('express');
+const MobileDetect = require('mobile-detect');
+const request = require('request-promise');
+const router = express.Router();
 
 /* GET home page. */
 
@@ -22,9 +23,16 @@ router.get('/', function (req, res) {
 });
 
 router.get('/email-confirmed', (req, res) => {
+
+  // send the page to the user
   res.render('email-confirmed', {
-    email: req.query.email,
     name: req.query.name || 'there'
+  });
+
+  // tells the yolosFalcon server that the user has confirmed his email id
+  request({
+    url: `http://www.yolosfalcon.com/internal/email-confirmed/${req.query.id}`,
+    method: 'POST'
   });
 });
 
