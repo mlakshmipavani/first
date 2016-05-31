@@ -27,6 +27,39 @@
   <link rel="stylesheet" href="/css/gh-fork-ribbon.ie.min.css"/>
   <![endif]-->
 
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq)return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq)f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window,
+      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1800261840206556');
+    fbq('track', "PageView");
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1800261840206556&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+
 </head>
 
 <body>
@@ -48,8 +81,8 @@
         <span class="landing-intro-text">With YoloBots you can get stuff done fast without the need to have hundreds of apps for every little task.</span>
       </div>
       <div class="row" id="intro-play-badge" align="right">
-        <a
-          href="https://play.google.com/store/apps/details?id=com.stayyolo.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_term%3Dintro-link">
+        <a class="main-link"
+           href="https://play.google.com/store/apps/details?id=com.stayyolo.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_term%3Dintro-link">
           <img width="250" src="images/google-play-badge.png">
         </a>
       </div>
@@ -209,8 +242,8 @@
     <span>Start working smarter and much more efficient.</span>
   </div>
   <div class="row last-section-image" align="center">
-    <a
-      href="https://play.google.com/store/apps/details?id=com.stayyolo.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_term%3Dfooter-link">
+    <a class="main-link"
+       href="https://play.google.com/store/apps/details?id=com.stayyolo.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dweb%26utm_term%3Dfooter-link">
       <img width="200" src="images/google-play-badge.png">
     </a>
   </div>
@@ -227,10 +260,17 @@
 </div>
 
 <!-- jQuery  -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/analytics.js"></script>
+
+<script>
+  $(".main-link").click(function () {
+    fbq('track', 'InitiateCheckout');
+  });
+</script>
+
 </body>
 
 </html>
