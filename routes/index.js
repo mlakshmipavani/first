@@ -3,6 +3,9 @@ const MobileDetect = require('mobile-detect');
 const request = require('request-promise');
 const router = express.Router();
 
+const Mixpanel = require('mixpanel');
+const mixpanel = Mixpanel.init('5e2b550eacf3d3031fd8841212d4e9eb');
+
 /* GET home page. */
 
 router.get('/', function (req, res) {
@@ -28,6 +31,8 @@ router.get('/email-confirmed', (req, res) => {
   res.render('email-confirmed', {
     name: req.query.name || 'there'
   });
+
+  if (req.query.id) mixpanel.people.set(req.query.id, 'Email Confirmed', true);
 
   // tells the yolosFalcon server that the user has confirmed his email id
   request({
